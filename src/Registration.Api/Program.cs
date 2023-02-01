@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Registration.Api.Endpoints;
 using Registration.Components;
 using Serilog;
 using Serilog.Events;
@@ -65,27 +66,17 @@ if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
     app.UseSwagger();
-    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Registration Demo v1"));
+    app.UseSwaggerUI(c =>
+    {
+        c.EnableTryItOutByDefault();
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Registration Demo v1");
+    });
 }
 
 app.UseRouting();
 app.UseAuthorization();
-
+app.MapHealthCheckEndpoints();
 app.MapControllers();
 
-static Task HealthCheckResponseWriter(HttpContext context, HealthReport result)
-{
-    context.Response.ContentType = "application/json";
-
-    return context.Response.WriteAsync(result.ToJsonString());
-}
-
-app.MapHealthChecks("/health/ready", new HealthCheckOptions
-{
-    Predicate = check => check.Tags.Contains("ready"),
-    ResponseWriter = HealthCheckResponseWriter
-});
-
-app.MapHealthChecks("/health/live", new HealthCheckOptions { ResponseWriter = HealthCheckResponseWriter });
 
 await app.RunAsync();

@@ -1,3 +1,4 @@
+// ReSharper disable once CheckNamespace
 namespace Registration.Components;
 
 using System;

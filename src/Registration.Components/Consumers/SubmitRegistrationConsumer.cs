@@ -19,13 +19,15 @@ public class SubmitRegistrationConsumer :
 
     public async Task Consume(ConsumeContext<SubmitRegistration> context)
     {
-        _logger.LogInformation("Registration received: {SubmissionId} ({Email})", context.Message.SubmissionId, context.Message.ParticipantEmailAddress);
+        _logger.LogInformation("Registration received: {SubmissionId} ({Email})", 
+            context.Message.SubmissionId, context.Message.ParticipantEmailAddress);
 
         ValidateRegistration(context.Message);
 
         await context.Publish<RegistrationReceived>(context.Message);
 
-        _logger.LogInformation("Registration accepted: {SubmissionId} ({Email})", context.Message.SubmissionId, context.Message.ParticipantEmailAddress);
+        _logger.LogInformation("Registration accepted: {SubmissionId} ({Email})", 
+            context.Message.SubmissionId, context.Message.ParticipantEmailAddress);
     }
 
     void ValidateRegistration(SubmitRegistration message)
