@@ -6,8 +6,7 @@ using MassTransit;
 using Microsoft.Extensions.Logging;
 
 
-public class ProcessPaymentActivity :
-    IActivity<ProcessPaymentArguments, ProcessPaymentLog>
+public class ProcessPaymentActivity : IActivity<ProcessPaymentArguments, ProcessPaymentLog>
 {
     readonly ILogger<ProcessPaymentActivity> _logger;
 

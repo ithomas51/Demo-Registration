@@ -1,4 +1,3 @@
 ﻿namespace Registration.Contracts;
 
-public record RegistrationReceived :
-    RegistrationDetail;
+public record RegistrationReceived : RegistrationDetail;

@@ -11,8 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
 [Route("[controller]")]
-public class RegistrationController :
-    ControllerBase
+public class RegistrationController : ControllerBase
 {
     /// <summary>
     /// Return the registration detail, including status

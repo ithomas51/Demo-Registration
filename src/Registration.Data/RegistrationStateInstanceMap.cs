@@ -6,8 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 
-public class RegistrationStateInstanceMap :
-    SagaClassMap<RegistrationState>
+public class RegistrationStateInstanceMap : SagaClassMap<RegistrationState>
 {
     protected override void Configure(EntityTypeBuilder<RegistrationState> entity, ModelBuilder model)
     {

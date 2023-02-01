@@ -1,4 +1,3 @@
 ﻿namespace Registration.Contracts;
 
-public record SubmitRegistration :
-    RegistrationDetail;
+public record SubmitRegistration : RegistrationDetail;

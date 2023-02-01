@@ -4,8 +4,7 @@ using System;
 using MassTransit;
 
 
-public class RabbitMqEndpointAddressProvider :
-    IEndpointAddressProvider
+public class RabbitMqEndpointAddressProvider : IEndpointAddressProvider
 {
     readonly IEndpointNameFormatter _formatter;
 

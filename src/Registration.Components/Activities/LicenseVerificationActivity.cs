@@ -6,8 +6,7 @@ using MassTransit;
 using Microsoft.Extensions.Logging;
 
 
-public class LicenseVerificationActivity :
-    IExecuteActivity<LicenseVerificationArguments>
+public class LicenseVerificationActivity : IExecuteActivity<LicenseVerificationArguments>
 {
     readonly ILogger<LicenseVerificationActivity> _logger;
 

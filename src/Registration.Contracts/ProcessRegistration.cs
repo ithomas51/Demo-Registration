@@ -1,4 +1,3 @@
 ﻿namespace Registration.Contracts;
 
-public record ProcessRegistration :
-    RegistrationDetail;
+public record ProcessRegistration : RegistrationDetail;

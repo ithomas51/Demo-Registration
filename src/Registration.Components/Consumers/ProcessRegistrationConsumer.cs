@@ -9,8 +9,7 @@ using Microsoft.Extensions.Logging;
 using Services;
 
 
-public class ProcessRegistrationConsumer :
-    IConsumer<ProcessRegistration>
+public class ProcessRegistrationConsumer : IConsumer<ProcessRegistration>
 {
     readonly ILogger<ProcessRegistrationConsumer> _logger;
     readonly ISecurePaymentInfoService _paymentInfoService;

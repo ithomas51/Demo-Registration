@@ -6,8 +6,7 @@ using MassTransit;
 using Microsoft.Extensions.Logging;
 
 
-public class EventRegistrationActivity :
-    IActivity<EventRegistrationArguments, EventRegistrationLog>
+public class EventRegistrationActivity : IActivity<EventRegistrationArguments, EventRegistrationLog>
 {
     readonly ILogger<EventRegistrationActivity> _logger;
     readonly IEndpointAddressProvider _provider;

@@ -7,8 +7,7 @@ using MassTransit;
 using Microsoft.Extensions.Logging;
 
 
-public class SubmitRegistrationConsumer :
-    IConsumer<SubmitRegistration>
+public class SubmitRegistrationConsumer : IConsumer<SubmitRegistration>
 {
     readonly ILogger<SubmitRegistrationConsumer> _logger;
 
