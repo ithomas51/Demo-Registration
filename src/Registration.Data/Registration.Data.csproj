@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MassTransit" Version="8.0.9" />
-    <PackageReference Include="MassTransit.EntityFrameworkCore" Version="8.0.9" />
+    <PackageReference Include="MassTransit" Version="8.0.12" />
+    <PackageReference Include="MassTransit.EntityFrameworkCore" Version="8.0.12" />
   </ItemGroup>
 
   <ItemGroup>
@@ -15,7 +15,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models" />
+    <Compile Remove="Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Models\**" />
   </ItemGroup>
 </Project>
 

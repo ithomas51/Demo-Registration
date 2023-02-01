@@ -27,7 +27,7 @@ var host = Host.CreateDefaultBuilder(args)
     {
         services.AddDbContext<RegistrationDbContext>(r =>
         {
-            var connectionString = hostContext.Configuration.GetConnectionString("Sagas");
+            var connectionString = hostContext.Configuration.GetConnectionString("DefaultConnection");
 
             r.UseSqlServer(connectionString, m =>
             {
