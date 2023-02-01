@@ -5,8 +5,7 @@ using Contracts;
 using MassTransit;
 
 
-public class RegistrationStateMachine :
-    MassTransitStateMachine<RegistrationState>
+public class RegistrationStateMachine : MassTransitStateMachine<RegistrationState>
 {
     public RegistrationStateMachine()
     {

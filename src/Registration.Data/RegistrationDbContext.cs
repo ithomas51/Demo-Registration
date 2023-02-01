@@ -5,8 +5,7 @@ using MassTransit.EntityFrameworkCoreIntegration;
 using Microsoft.EntityFrameworkCore;
 
 
-public class RegistrationDbContext :
-    SagaDbContext
+public class RegistrationDbContext : SagaDbContext
 {
     public RegistrationDbContext(DbContextOptions options)
         : base(options)

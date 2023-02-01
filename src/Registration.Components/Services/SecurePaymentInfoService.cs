@@ -3,8 +3,7 @@
 using Contracts;
 
 
-public class SecurePaymentInfoService :
-    ISecurePaymentInfoService
+public class SecurePaymentInfoService : ISecurePaymentInfoService
 {
     public SecurePaymentInfo GetPaymentInfo(string emailAddress, string cardNumber)
     {

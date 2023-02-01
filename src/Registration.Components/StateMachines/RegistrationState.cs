@@ -4,8 +4,7 @@ using System;
 using MassTransit;
 
 
-public class RegistrationState :
-    SagaStateMachineInstance
+public class RegistrationState : SagaStateMachineInstance
 {
     public string ParticipantEmailAddress { get; set; }
     public string ParticipantLicenseNumber { get; set; }

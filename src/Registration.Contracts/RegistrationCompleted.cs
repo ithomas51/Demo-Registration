@@ -5,8 +5,7 @@ using System.Collections.Generic;
 using MassTransit.Courier.Contracts;
 
 
-public record RegistrationCompleted :
-    RoutingSlipCompleted
+public record RegistrationCompleted : RoutingSlipCompleted
 {
     public Guid SubmissionId { get; init; }
     public Guid TrackingNumber { get; init; }

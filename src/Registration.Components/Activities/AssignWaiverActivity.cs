@@ -5,8 +5,7 @@ using MassTransit;
 using Microsoft.Extensions.Logging;
 
 
-public class AssignWaiverActivity :
-    IExecuteActivity<AssignWaiverArguments>
+public class AssignWaiverActivity : IExecuteActivity<AssignWaiverArguments>
 {
     readonly ILogger<AssignWaiverActivity> _logger;
 
