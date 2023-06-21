@@ -8,7 +8,7 @@ using Registration.Data;
 
 #nullable disable
 
-namespace Registration.Service.Migrations
+namespace Registration.Data.Migrations
 {
     [DbContext(typeof(RegistrationDbContext))]
     partial class RegistrationDbContextModelSnapshot : ModelSnapshot
@@ -17,7 +17,7 @@ namespace Registration.Service.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.1")
+                .HasAnnotation("ProductVersion", "7.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);

@@ -31,6 +31,7 @@ var host = Host.CreateDefaultBuilder(args)
 
             r.UseSqlServer(connectionString, m =>
             {
+                m.MigrationsAssembly("Registration.Data");
                 m.MigrationsAssembly(Assembly.GetExecutingAssembly().GetName().Name);
                 m.MigrationsHistoryTable($"__{nameof(RegistrationDbContext)}");
             });

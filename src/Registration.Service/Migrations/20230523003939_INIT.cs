@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Registration.Service.Migrations
+namespace Registration.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class INIT : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,9 +19,15 @@ namespace Registration.Service.Migrations
                     ParticipantEmailAddress = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ParticipantLicenseNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ParticipantCategory = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ParticipantLicenseExpirationDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    RegistrationId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    CardNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EventId = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     RaceId = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CurrentState = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    CurrentState = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Reason = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RetryAttempt = table.Column<int>(type: "int", nullable: false),
+                    ScheduleRetryToken = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {

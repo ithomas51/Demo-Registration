@@ -9,18 +9,18 @@ using Registration.Data;
 
 #nullable disable
 
-namespace Registration.Service.Migrations
+namespace Registration.Data.Migrations
 {
     [DbContext(typeof(RegistrationDbContext))]
-    [Migration("20221221024051_Updated")]
-    partial class Updated
+    [Migration("20230523003939_INIT")]
+    partial class INIT
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.1")
+                .HasAnnotation("ProductVersion", "7.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -29,6 +29,9 @@ namespace Registration.Service.Migrations
                 {
                     b.Property<Guid>("CorrelationId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CardNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CurrentState")
                         .HasColumnType("nvarchar(max)");
@@ -50,6 +53,18 @@ namespace Registration.Service.Migrations
 
                     b.Property<string>("RaceId")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Reason")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("RegistrationId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("RetryAttempt")
+                        .HasColumnType("int");
+
+                    b.Property<Guid?>("ScheduleRetryToken")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("CorrelationId");
 
